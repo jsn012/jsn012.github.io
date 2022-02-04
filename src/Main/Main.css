@@ -175,7 +175,7 @@
 
 
 /* Mobile */
-@media screen and (min-width: 501px) {
+@media (min-width: 501px) {
   .slide-item:hover .slide-detail {
     opacity: 1;
     pointer-events: auto;
@@ -184,7 +184,7 @@
 
 
 /* PC */
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .slide-detail.detail-active {
     opacity: 1;
     pointer-events: auto;
