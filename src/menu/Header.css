@@ -26,12 +26,16 @@
   height: 40px;
   top: 34px;
   right: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.header-navBtn svg {
-  width: 30px;
-  height: 30px;
+.header-navBtn-border {
+  position: absolute;
+  left: 9px;
+  width: 22px;
+  height: 2px;
+  background-color: #000;
 }
+
+.header-navBtn-border:nth-child(1) { top: 11px; }
+.header-navBtn-border:nth-child(2) { top: 19px; }
+.header-navBtn-border:nth-child(3) { top: 27px; }
