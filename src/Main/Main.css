@@ -1,14 +1,32 @@
+/* section ---------------------------*/
 .main-section {
-  margin-bottom: 50px;
+  padding: 0 28px;
+  margin-bottom: 90px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+}
+
+.section-header h1 {
+  font-size: 30px;
+}
+
+.section-header a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
 }
 
 
 /* NewGames ---------------------------*/
 .main-section.newgames {
   box-sizing: border-box;
-  /* height: 200px; */
-  /* padding: 36px; */
-  /* background-color: burlywood; */
+  padding: 0;
+  margin-bottom: 60px;
 }
 
 .swiper {
@@ -30,35 +48,6 @@
   box-shadow: 0 6px 14px 0 rgb(0 0 0 / 15%);
   /* background-color: cadetblue; */
 }
-
-/* .swiper-horizontal>.swiper-scrollbar {
-  width: 50%;
-  height: 2px;
-  bottom: 0px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 0;
-  background-color: #f5f5f5;
-}
-
-.swiper-scrollbar-drag {
-  border-radius: 0;
-  background-color: #000;
-}
-
-.swiper-pagination {
-  bottom: 0 !important;
-}
-
-.swiper-pagination-bullet {
-  width: 7px;
-  height: 7px;
-  margin: 0 6px !important;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #000;
-} */
 
 
 /* Slide-item -----------------------------*/
@@ -141,27 +130,6 @@
 
 
 /* NEWS ---------------------------*/
-.main-section.news {
-  padding: 0 28px;
-}
-
-.news-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 8px;
-}
-
-.news-header h1 {
-  font-size: 30px;
-}
-
-.news-header a {
-  font-size: 15px;
-  font-weight: 600;
-  color: #333;
-}
-
 .news-list {
   display: flex;
   flex-direction: column;
@@ -177,6 +145,7 @@
 .news-date,
 .news-tag {
   margin-right: 10px;
+  font-size: 13px;
 }
 
 .news-date {
@@ -186,10 +155,10 @@
 }
 
 .news-tag {
-  padding: 2px 6px;
+  /* padding: 2px 6px;
   background-color: #000;
-  color: #fff;
-  font-size: 12px;
+  color: #fff; */
+  /* font-size: 12px; */
   font-weight: 700;
 }
 

@@ -4,8 +4,6 @@ import { Pagination, Scrollbar, Autoplay } from 'swiper';
 import { Link } from 'react-router-dom';
 
 import 'swiper/css';
-// import 'swiper/css/scrollbar';
-// import 'swiper/css/pagination';
 import './Main.css'
 
 export default function Main() {
@@ -13,6 +11,7 @@ export default function Main() {
     <main>
       <NewGames />
       <News />
+      <Games />
     </main>
   );
 }
@@ -23,10 +22,6 @@ function NewGames() {
       <Swiper
         className='banner'
         modules={[Pagination, Scrollbar, Autoplay]}
-        // scrollbar={{
-        //   draggable: true,
-        // }}
-        // pagination={{ clickable: true }}
         loop
         autoplay={{
           delay: 4000,
@@ -93,7 +88,7 @@ function SlideItem(props) {
 function News() {
   return(
     <section className='main-section news'>
-      <div className='news-header'>
+      <div className='section-header'>
         <h1>NEWS</h1>
         <Link to='/'>MORE</Link>
       </div>
@@ -113,10 +108,21 @@ function News() {
 function NewsItem(props) {
   return(
     <li className='news-item' id={props.id}>
+      <Link to='/' className='news-link'></Link>
       <span className='news-date'>2022.02.03</span>
       <span className='news-tag'>#신작</span>
       <p className='news-title'>{props.id}</p>
-      <Link to='/' className='news-link'></Link>
     </li>
+  );
+}
+
+function Games() {
+  return(
+    <section className='main-section games'>
+      <div className='section-header'>
+        <h1>GAMES</h1>
+        <Link to='/'>MORE</Link>
+      </div>
+    </section>
   );
 }
