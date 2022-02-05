@@ -1,5 +1,5 @@
 import Header from "./menu/Header";
-import Main from "./Main/Main";
+import Main from "./main/Main";
 import Footer from "./menu/Footer";
 
 function App() {

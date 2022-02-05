@@ -12,6 +12,7 @@ export default function Main() {
       <NewGames />
       <News />
       <Games />
+      <Projects />
     </main>
   );
 }
@@ -109,9 +110,9 @@ function NewsItem(props) {
   return(
     <li className='news-item' id={props.id}>
       <Link to='/' className='news-link'></Link>
-      <span className='news-date'>2022.02.03</span>
-      <span className='news-tag'>#신작</span>
-      <p className='news-title'>{props.id}</p>
+      <span className='news-date'>2022.01.01</span>
+      <span className='news-tag'>#신작 #게임명 #국가</span>
+      <p className='news-title'>텍스트가 들어갈 자리</p>
     </li>
   );
 }
@@ -121,6 +122,17 @@ function Games() {
     <section className='main-section games'>
       <div className='section-header'>
         <h1>GAMES</h1>
+        <Link to='/'>MORE</Link>
+      </div>
+    </section>
+  );
+}
+
+function Projects() {
+  return(
+    <section className='main-section projects'>
+      <div className='section-header'>
+        <h1>PROJECTS</h1>
         <Link to='/'>MORE</Link>
       </div>
     </section>
