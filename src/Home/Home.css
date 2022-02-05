@@ -23,50 +23,43 @@
 }
 
 
-/* NewGames ---------------------------*/
-.main-section.newgames {
+/* HomeNewGames ------------------------*/
+.main-section.Home-newgames {
   box-sizing: border-box;
   padding: 0;
   margin-bottom: 60px;
 }
 
-.swiper {
+.Home-newgames .swiper {
   box-sizing: border-box;
-  /* padding: 8px 40px; */
   padding: 8px 40px 18px 40px;
-  /* padding: 0px 34px; */
 }
 
-.swiper-slide {
+.Home-newgames .swiper-slide {
   box-sizing: border-box;
   width: 100%;
   max-width: 380px;
   aspect-ratio: 16/9;
-  /* height: 150px; */
-  /* margin-right: 16px; */
-  /* border: 1px solid #000; */
   border-radius: 12px;
   box-shadow: 0 6px 14px 0 rgb(0 0 0 / 15%);
-  /* background-color: cadetblue; */
 }
 
 
-/* Slide-item -----------------------------*/
-.slide-item,
-.slide-item-img {
-  /* position: absolute; */
+/* SlideItem ---------------------------*/
+.Home-newgames .slide-item,
+.Home-newgames .slide-item-img {
   width: 100%;
   height: 100%;
   border-radius: 12px;
 }
 
-.slide-item-img {
+.Home-newgames .slide-item-img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.slide-detail {
+.Home-newgames .slide-detail {
   position: absolute;
   box-sizing: border-box;
   width: 100%;
@@ -79,7 +72,6 @@
   color: #fff;
   font-weight: 500;
   opacity: 0;
-  /* opacity: 1; */
   pointer-events: none;
 
   display: flex;
@@ -90,11 +82,11 @@
   transition: opacity .3s;
 }
 
-.slide-detail div {
+.Home-newgames .slide-detail div {
   display: flex;
 }
 
-.slide-detail-icon {
+.Home-newgames .slide-detail-icon {
   width: 20%;
   min-width: 50px;  
   aspect-ratio: 1;
@@ -103,39 +95,41 @@
   background-color: #fff;
 }
 
-.slide-detail-title {
+.Home-newgames .slide-detail-title {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 1px;
 }
 
-.slide-detail_wrap {
+.Home-newgames .slide-detail_wrap {
   align-items: center;
   margin-bottom: 5px;
 }
 
-.slide-detail_wrap hr {
+.Home-newgames .slide-detail_wrap hr {
   height: 10px;
   margin: 0 6px;
 }
 
-.slide-detail-dev,
-.slide-detail-pub {
+.Home-newgames .slide-detail-dev,
+.Home-newgames .slide-detail-pub {
   font-size: 12px;
   font-weight: 500;
 }
 
-.slide-detail-tag {
+.Home-newgames .slide-detail-tag {
   font-size: 12px;
 }
 
 
-/* NEWS ---------------------------*/
+/* HomeNews ---------------------------*/
 .news-list {
   display: flex;
   flex-direction: column;
 }
 
+
+/* HomeNewsItem, NewsItem ---------------------------*/
 .news-item {
   position: relative;
   list-style: none;
@@ -146,25 +140,21 @@
 .news-date,
 .news-tag {
   margin-right: 12px;
+  font-weight: 600;
 }
 
 .news-date {
   font-size: 13px;
-  font-weight: 600;
   letter-spacing: -0.5px;
 }
 
 .news-tag {
-  /* padding: 2px 6px;
-  background-color: #000;
-  color: #fff; */
   font-size: 12px;
-  font-weight: 700;
   color: #aaa;
 }
 
 .news-title {
-  padding-top: 10px;
+  padding-top: 12px;
   font-weight: 500;
 }
 
@@ -174,6 +164,17 @@
   height: 100%;
   top: 0;
 }
+
+
+/* HomeGames ---------------------------*/
+
+
+
+/* HomeProjects ---------------------------*/
+
+
+
+
 
 
 /* Mobile */

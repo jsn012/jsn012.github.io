@@ -4,34 +4,36 @@ import { Pagination, Scrollbar, Autoplay } from 'swiper';
 import { Link } from 'react-router-dom';
 
 import 'swiper/css';
-import './Main.css'
+import './Home.css'
 
-export default function Main() {
+export default function Home() {
   return (
     <main>
-      <NewGames />
-      <News />
-      <Games />
-      <Projects />
+      <HomeNewGames />
+      <HomeNews />
+      <HomeGames />
+      <HomeProjects />
     </main>
   );
 }
 
-function NewGames() {
+function HomeNewGames() {
+  const swiperParams = {
+    className: 'banner',
+    modules: [Pagination, Scrollbar, Autoplay],
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      loop: true,
+      disableOnInteraction: false,
+    },
+    spaceBetween: 22,
+    slidesPerView: 'auto',
+  }
+
   return(
-    <section className="main-section newgames">
-      <Swiper
-        className='banner'
-        modules={[Pagination, Scrollbar, Autoplay]}
-        loop
-        autoplay={{
-          delay: 4000,
-          loop: true,
-          disableOnInteraction: false,
-        }}
-        spaceBetween={22}
-        slidesPerView='auto'
-      >
+    <section className="main-section Home-newgames">
+      <Swiper {...swiperParams}>
         <SwiperSlide>
           <SlideItem no={'projectsnow'} />
         </SwiperSlide>
@@ -86,30 +88,30 @@ function SlideItem(props) {
   );
 }
 
-function News() {
+function HomeNews() {
   return(
-    <section className='main-section news'>
+    <section className='main-section Home-news'>
       <div className='section-header'>
         <h1>NEWS</h1>
-        <Link to='/'>MORE</Link>
+        <Link to='/news'>MORE</Link>
       </div>
       <div className='news-wrap'>
         <ol className='news-list'>
-          <NewsItem id={1}/>
-          <NewsItem id={2}/>
-          <NewsItem id={3}/>
-          <NewsItem id={4}/>
-          <NewsItem id={5}/>
+          <HomeNewsItem id={1}/>
+          <HomeNewsItem id={2}/>
+          <HomeNewsItem id={3}/>
+          <HomeNewsItem id={4}/>
+          <HomeNewsItem id={5}/>
         </ol>
       </div>
     </section>
   );
 }
 
-function NewsItem(props) {
+function HomeNewsItem(props) {
   return(
     <li className='news-item' id={props.id}>
-      <Link to='/' className='news-link'></Link>
+      <Link to={`/news/${props.id}`} className='news-link'></Link>
       <span className='news-date'>2022.01.01</span>
       <span className='news-tag'>#신작 #게임명 #국가</span>
       <p className='news-title'>텍스트가 들어갈 자리</p>
@@ -117,9 +119,9 @@ function NewsItem(props) {
   );
 }
 
-function Games() {
+function HomeGames() {
   return(
-    <section className='main-section games'>
+    <section className='main-section Home-games'>
       <div className='section-header'>
         <h1>GAMES</h1>
         <Link to='/'>MORE</Link>
@@ -128,9 +130,9 @@ function Games() {
   );
 }
 
-function Projects() {
+function HomeProjects() {
   return(
-    <section className='main-section projects'>
+    <section className='main-section Home-projects'>
       <div className='section-header'>
         <h1>PROJECTS</h1>
         <Link to='/'>MORE</Link>

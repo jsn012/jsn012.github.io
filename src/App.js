@@ -1,12 +1,18 @@
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./menu/Header";
-import Main from "./main/Main";
+import Home from "./Home/Home";
+import News from "./News/News";
 import Footer from "./menu/Footer";
 
 function App() {
   return (
     <>
       <Header />
-      <Main />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/news/*' element={<News />} />
+      </Routes>
       <Footer />
     </>
   );
