@@ -27,35 +27,60 @@ export default function Header() {
     window.addEventListener('scroll', updateScroll);
   }, [scrollPosition]);
 
+  const headerClose = () => {
+    setFixNevOpen(false);
+    setHeadNevOpen(false);
+    document.querySelector('body').style.overflowY = 'auto';
+    window.scrollTo(0, 0);
+  };
+
   return(
     <header className='header'>
       <div className={`header-fix ${fixNavOpen ? 'header-navOpen' : ''} ${scrollPosition > 64 ? 'on' : ''}`}>
         <div className="header-logo">
           <span>MAYNUT</span>
-          <Link to='/' />
+          <Link to='/' onClick={headerClose} />
         </div>
         <button className="header-navBtn" onClick={fixNavCheck} type='button'>
           <div className='header-navBtn-border'></div>
           <div className='header-navBtn-border'></div>
           <div className='header-navBtn-border'></div>
         </button>
-        <div className='header-inner'></div>
+        <HeaderInner pf={headerClose}/>
         <div className='header-bg'></div>
       </div>
       <div className={`header-head ${headNavOpen ? 'header-navOpen' : ''}`}>
         <div className="header-logo"
           style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/img/maynut_logo_black.png)`}}
         >
-          <Link to='/' />
+          <Link to='/' onClick={headerClose} />
         </div>
         <button className="header-navBtn" onClick={headNavCheck} type='button'>
           <div className='header-navBtn-border'></div>
           <div className='header-navBtn-border'></div>
           <div className='header-navBtn-border'></div>
         </button>
-        <div className='header-inner'></div>
+        <HeaderInner pf={headerClose}/>
         <div className='header-bg'></div>
       </div>
     </header>
+  );
+}
+
+function HeaderInner(props) {
+  const navClick = () => {
+    props.pf();
+  };
+
+  return(
+    <div className='header-inner'>
+      <nav className='nav-wrap'>
+        <ul>
+          <li><Link to='/news' onClick={navClick}>NEWS</Link></li>
+          <li><Link to='/games'>GAMES</Link></li>
+          <li><Link to='/projects'>PROJECTS</Link></li>
+        </ul>
+      </nav>
+    </div>
   );
 }

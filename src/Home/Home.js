@@ -7,12 +7,16 @@ import 'swiper/css';
 import './Home.css'
 
 export default function Home() {
+  const resetPage = () => {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <main>
       <HomeNewGames />
-      <HomeNews />
-      <HomeGames />
-      <HomeProjects />
+      <HomeNews pf={resetPage} />
+      <HomeGames pf={resetPage} />
+      <HomeProjects pf={resetPage} />
     </main>
   );
 }
@@ -88,20 +92,20 @@ function SlideItem(props) {
   );
 }
 
-function HomeNews() {
+function HomeNews(props) {
+  const newsList = [1,2,3,4,5];
+
   return(
     <section className='main-section Home-news'>
       <div className='section-header'>
         <h1>NEWS</h1>
-        <Link to='/news'>MORE</Link>
+        <Link to='/news' onClick={() => {props.pf()}}>MORE</Link>
       </div>
       <div className='news-wrap'>
         <ol className='news-list'>
-          <HomeNewsItem id={1}/>
-          <HomeNewsItem id={2}/>
-          <HomeNewsItem id={3}/>
-          <HomeNewsItem id={4}/>
-          <HomeNewsItem id={5}/>
+          {newsList.map(no => {
+            return <HomeNewsItem id={no} key={`Home_news_${no}`} />
+          })}
         </ol>
       </div>
     </section>
@@ -119,23 +123,23 @@ function HomeNewsItem(props) {
   );
 }
 
-function HomeGames() {
+function HomeGames(props) {
   return(
     <section className='main-section Home-games'>
       <div className='section-header'>
         <h1>GAMES</h1>
-        <Link to='/'>MORE</Link>
+        <Link to='/' onClick={() => {props.pf()}}>MORE</Link>
       </div>
     </section>
   );
 }
 
-function HomeProjects() {
+function HomeProjects(props) {
   return(
     <section className='main-section Home-projects'>
       <div className='section-header'>
         <h1>PROJECTS</h1>
-        <Link to='/'>MORE</Link>
+        <Link to='/' onClick={() => {props.pf()}}>MORE</Link>
       </div>
     </section>
   );
